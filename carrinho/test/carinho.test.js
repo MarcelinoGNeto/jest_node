@@ -26,7 +26,15 @@ describe('Testes do carrinho', () => {
 
   it('Deve ter a propriedade "total" na inicialização', () => {
     const carrinho = new Carrinho();
-
     expect(carrinho).toHaveProperty('total');
+  });
+
+  it('Deve lançar erro ao finalizar a compra com carrinho vazio', () => {
+    function englobaErroCarrinho() {
+      const carrinho = new Carrinho();
+      carrinho.finalizaCompra();
+    }
+
+    expect(englobaErroCarrinho).toThrowError('Carrinho de compras vazio');
   });
 });

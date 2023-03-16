@@ -1,0 +1,33 @@
+Anotações do curso de testes com jest - NODE.JS
+
+E2E (end to end - ponta a ponta): Analisa o fluxo completo, front, back, banco e todas as stacks.
+INTEGRAÇÃO: Testes de serviços, rotas e requisições. Comunicação dos módulos
+UNITÁRIO: Analisar pequenas frações, como uma função, método ou classe.
+
+Fases do teste:
+	1- Análise de requisitos: Quais funcionalidade estarão presentes no projeto e selecionar quais tipos de teste serão necessários para realizar esses teste
+	2- Plano de teste: QA, que é o Quality Assurance, ou os analistas de qualidade, elaboram o plano de teste, contendo as ferramentas que serão utilizadas,
+		 dividindo as responsabilidades de quem vai criar os testes e estimando no geral qual será o tempo, a complexidade e os gastos de recursos que terá naquele projeto.
+	3- Caso de teste: são detalhados os testes em si: quais são as condições, os dados de entrada, os comportamentos esperados, dados de saída, 
+		quantidade de testes. Todo esse mapeamento é feito nos casos de teste.
+	4- Ambiente de teste: são escolhidos onde e como esses testes serão executados. É feito o pipeline, o fluxo de como é produzido pela equipe 
+		de desenvolvimento e como aquilo vai sendo testado, ferramentas de versionamento e tudo que será utilizado,  onde as alterações e 
+		implementações que são feitas pelo time de desenvolvimento vão sendo testadas e validadas para poder seguir no projeto.
+	5- Implementação: onde é feita a documentação daqueles resultados que foram obtidos com os testes, problemas que aconteceram dentro dos processos, 
+		estabelecendo como podem ter melhorias para os próximos ciclos e toda essa parte que vai lidar diretamente com a implementação, 
+		tanto do código em si do projeto quanto da implementação dos testes e tudo que aconteceu em torno disso
+
+JEST:
+	-arquivo de teste por convenção leva o mesmo nome do arquivo original termina com a extenção .test.js ou .spec.js
+	-algumas funções básicas de testes são:
+		describe(): função que Descreve o que faz o conjunto de testes
+		it/test():’isso' é a função de teste em sí: 'Isso deve retornar o esperado'
+		expect(): ‘espera' módulo do teste que recebe o retorno do teste
+		MATCHERS:
+			.toBe():  ‘seja igual' Espera que o retorno se igual ao esperado
+			.toBeCloseTo():  ‘seja próximo a' Espera que o retorno se igual próximo ao esperado
+			.toContain(): ‘contenha’ normalmente utilizado para verificar conteudo existe no  array
+			.toHaveProperty(‘propriedade’): ’ter a propriedade’	verifica se tem uma determinada propriedade
+            .toThrowError(‘mensagem do erro’): ’lançar erro’ verifica se funcionalidades que disparam erro
+	 -test:watch (npm run watch): exibe no terminal o relatório simples dos testes
+	-test:coverage (npm run coverage): exibe no terminal e tbm disponível em html uma página com relatório mais descritivo dos testes
