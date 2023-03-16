@@ -29,5 +29,6 @@ JEST:
 			.toContain(): ‘contenha’ normalmente utilizado para verificar conteudo existe no  array
 			.toHaveProperty(‘propriedade’): ’ter a propriedade’	verifica se tem uma determinada propriedade
             .toThrowError(‘mensagem do erro’): ’lançar erro’ verifica se funcionalidades que disparam erro
+            .toStrictEqual(): ‘estritamente igual’ verifica se funcionalidade testada esta retornando estritamente o esperado
 	 -test:watch (npm run watch): exibe no terminal o relatório simples dos testes
 	-test:coverage (npm run coverage): exibe no terminal e tbm disponível em html uma página com relatório mais descritivo dos testes
