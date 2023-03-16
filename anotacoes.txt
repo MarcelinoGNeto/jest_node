@@ -23,6 +23,7 @@ JEST:
 		describe(): função que Descreve o que faz o conjunto de testes
 		it/test():’isso' é a função de teste em sí: 'Isso deve retornar o esperado'
 		expect(): ‘espera' módulo do teste que recebe o retorno do teste
+		it.skip(): ‘passar' usado para pular um teste, normalmente usado para pular testes grandes
 		MATCHERS:
 			.toBe():  ‘seja igual' Espera que o retorno se igual ao esperado
 			.toBeCloseTo():  ‘seja próximo a' Espera que o retorno se igual próximo ao esperado
@@ -30,5 +31,7 @@ JEST:
 			.toHaveProperty(‘propriedade’): ’ter a propriedade’	verifica se tem uma determinada propriedade
             .toThrowError(‘mensagem do erro’): ’lançar erro’ verifica se funcionalidades que disparam erro
             .toStrictEqual(): ‘estritamente igual’ verifica se funcionalidade testada esta retornando estritamente o esperado
+			.jest.fn(): cria funções de simulação para um novo comportamento no teste, sem afetar o ambiente de produção
+			.mockReturnValue(): compara com uma simulação, normalmente usado para simular chamadas de API
 	 -test:watch (npm run watch): exibe no terminal o relatório simples dos testes
 	-test:coverage (npm run coverage): exibe no terminal e tbm disponível em html uma página com relatório mais descritivo dos testes
