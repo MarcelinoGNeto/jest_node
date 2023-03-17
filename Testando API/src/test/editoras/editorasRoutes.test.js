@@ -40,13 +40,13 @@ describe('POST em /editoras', () => {
             .expect(201); // espera a resposta com sucesso
         idResposta = resposta.body.content.id;
     })
-})
 
-describe('DELETE em /editoras/id', () => {
-    it('Deletar o recurso adicionado pela rota de POST', async () => {
+    // Caso de contorno / beirada
+    it('Deve não adicionar nada ao passar body vazio', async () => {
         await request(app)
-            .delete(`/editoras/${idResposta}`)
-            .expect(200) // espera a resposta com sucesso
+            .post('/editoras')
+            .send({})
+            .expect(400)
     })
 })
 
@@ -54,6 +54,23 @@ describe('GET pega editora por id /editoras/id', () => {
     it('deve retornar recurso selecionado', async () => {
         await request(app)
             .get(`/editoras/${idResposta}`)
+            .expect(200) // espera a resposta com sucesso
+    })
+})
+
+describe('PUT em /editoras/id', () => {
+    it('Deve alterar o campo nome', async () => {
+        await request(app)
+            .put(`/editoras/${idResposta}`)
+            .send({nome: 'Casa do Código'})
+            .expect(204)
+    })
+})
+
+describe('DELETE em /editoras/id', () => {
+    it('Deletar o recurso adicionado pela rota de POST', async () => {
+        await request(app)
+            .delete(`/editoras/${idResposta}`)
             .expect(200) // espera a resposta com sucesso
     })
 })
