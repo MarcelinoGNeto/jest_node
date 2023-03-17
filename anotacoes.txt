@@ -35,3 +35,6 @@ JEST:
 			.mockReturnValue(): compara com uma simulação, normalmente usado para simular chamadas de API
 	 -test:watch (npm run watch): exibe no terminal o relatório simples dos testes
 	-test:coverage (npm run coverage): exibe no terminal e tbm disponível em html uma página com relatório mais descritivo dos testes
+
+	-Hooks: beforeEach(() => {iniciar conexão/servidor}) afterEach(() => {derruba a conexão/servidor}), são alguns métodos específicos
+	que ocorrem antes e depois dos testes.
