@@ -59,10 +59,15 @@ describe('GET pega editora por id /editoras/id', () => {
 })
 
 describe('PUT em /editoras/id', () => {
-    it('Deve alterar o campo nome', async () => {
+    // each roda cada um dos testes separado
+    it.each([
+        ['nome', {nome: 'Casa do Código'}], // 1
+        ['cidade', {cidade: 'SP'}], // 2
+        ['email', {email: 'cdc@cdc'}], // 3
+    ])('Deve alterar o campo %s', async (param) => {
         await request(app)
             .put(`/editoras/${idResposta}`)
-            .send({nome: 'Casa do Código'})
+            .send(param)
             .expect(204)
     })
 })

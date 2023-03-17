@@ -46,3 +46,5 @@ JEST:
 	-Supertest: LIB (ambiente de dev) que utiliza o superagent com a finalidade de executar asserções HTTP (get, post, put, delete, etc)
 	-Casos de contorno ou beirada: são situações que o usuário ou quem está chamando a API pode acabar fazendo e você tem que, 
 		de certa forma, ter previsto um comportamento do tipo. 
+	-Testando com tabela: it.each(): quando se testa uma rota do tipo PUT, o método each() permite testar mais de um valor
+		 e alterar cada um dos parâmetros.
