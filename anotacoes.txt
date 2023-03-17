@@ -48,3 +48,4 @@ JEST:
 		de certa forma, ter previsto um comportamento do tipo. 
 	-Testando com tabela: it.each(): quando se testa uma rota do tipo PUT, o método each() permite testar mais de um valor
 		 e alterar cada um dos parâmetros.
+	-Fazendo mocks de módulos: Objeto Jest através do jest.spyOn(object, methodName) espiona os métodos de um objeto  

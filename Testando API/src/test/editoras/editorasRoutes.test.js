@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect } from "@jest/globals";
+import { afterEach, beforeEach, describe, expect, jest } from "@jest/globals";
 import app from "../../app";
 import request from "supertest"
 
@@ -65,10 +65,15 @@ describe('PUT em /editoras/id', () => {
         ['cidade', {cidade: 'SP'}], // 2
         ['email', {email: 'cdc@cdc'}], // 3
     ])('Deve alterar o campo %s', async (param) => {
-        await request(app)
+        //spyOn: cria um espião para verificar os métodos do objeto
+        const requisicao = { request };
+        const spy = jest.spyOn(requisicao, 'request')
+        await requisicao.request(app)
             .put(`/editoras/${idResposta}`)
             .send(param)
-            .expect(204)
+            .expect(204);
+
+        expect(spy).toHaveBeenCalled();
     })
 })
 
